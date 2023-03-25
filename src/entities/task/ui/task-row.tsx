@@ -1,8 +1,7 @@
+import { useNavigation } from "@react-navigation/native";
 import { ReactNode } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import type { NavProp } from "shared/routes";
-import type { Task } from "shared";
+import type { Task, NavProp } from "shared";
 
 type TaskRowProps = {
   data: Task;

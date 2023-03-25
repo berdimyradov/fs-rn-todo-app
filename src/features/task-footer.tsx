@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import { StyleSheet, Text, View } from "react-native";
 import { taskModel } from "entities";
 
 type Props = {

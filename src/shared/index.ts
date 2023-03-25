@@ -11,3 +11,6 @@ export * from "./api";
 
 // ./lib
 export * from "./lib";
+
+// misc
+export * from "./routes";

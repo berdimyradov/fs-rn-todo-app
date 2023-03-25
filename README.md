@@ -10,7 +10,7 @@
 - **UI**: `react`, `react-native`, `expo`,
 - **Data model**: `redux`,
 - **Lang**: `typescript`
-- **Lint**: `prettier`
+- **Lint**: `prettier`, `eslint`
 - **Architecture**: `feature-sliced`
 
 <div align="center">
@@ -20,5 +20,6 @@
 <img title="redux" alt="redux" height=48 src="https://raw.githubusercontent.com/yurijserrano/Github-Profile-Readme-Logos/master/frameworks/redux.svg"/>
 <img title="typescript" alt="typescript" height=48 src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"/>
 <img title="prettier" alt="prettier" height=48 src="https://prettier.io/icon.png"/>
+<img title="eslint" alt="eslint" height=48 src="https://eslint.org/favicon.ico"/>
 <img title="feature-sliced" alt="feature-sliced" height=48 src="https://avatars.githubusercontent.com/u/60469024?s=200&v=4"/>
 </div>

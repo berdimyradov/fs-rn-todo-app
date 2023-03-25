@@ -1,8 +1,8 @@
-import { TaskFooter } from "features";
 import { FC } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-import type { ScreenProps } from "shared/routes";
 import { TaskCardWidget } from "widgets";
+import { TaskFooter } from "features";
+import type { ScreenProps } from "shared/routes";
 
 export const TaskScreen: FC<ScreenProps<"Task">> = ({ route }) => {
   return (

@@ -1,8 +1,8 @@
-import { StyleSheet, View, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { Entypo } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View, Text } from "react-native";
 import { taskModel } from "entities";
-import type { NavProp } from "shared/routes";
+import type { NavProp } from "shared";
 
 export const TasksSummary = () => {
   const numberOfTasks = taskModel.selectors.getFilteredTasks().length;

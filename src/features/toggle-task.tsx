@@ -1,6 +1,6 @@
-import { taskLib, taskModel, useTaskDispatch } from "entities";
 import Checkbox from "expo-checkbox";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { taskLib, taskModel, useTaskDispatch } from "entities";
 
 export type ToggleTaskProps = {
   taskId: number;

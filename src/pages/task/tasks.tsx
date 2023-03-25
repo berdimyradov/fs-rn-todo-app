@@ -1,8 +1,8 @@
-import { taskModel, TaskRow, useTaskDispatch } from "entities";
 import { StatusBar } from "expo-status-bar";
-import { TasksFilters, TasksSummary, ToggleTask } from "features";
 import { FC } from "react";
 import { FlatList, SafeAreaView, StyleSheet } from "react-native";
+import { TasksFilters, TasksSummary, ToggleTask } from "features";
+import { taskModel, TaskRow, useTaskDispatch } from "entities";
 import { Empty, Loading } from "shared";
 import { ScreenProps } from "shared/routes";
 
