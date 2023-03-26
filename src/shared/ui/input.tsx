@@ -1,14 +1,5 @@
-import { StyleSheet, TextInput, TextInputProps } from "react-native";
+import { TextInput, TextInputProps } from "react-native";
 
 export const Input = (props: TextInputProps) => {
-  return <TextInput style={styles.input} {...props} />;
+  return <TextInput className="h-10 my-3 p-2.5 border" {...props} />;
 };
-
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    marginVertical: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});

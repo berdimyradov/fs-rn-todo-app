@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import type { Task } from "shared";
 
 type Props = {
@@ -12,21 +12,8 @@ export const TaskCard = ({ task }: Props) => {
 
   return (
     <>
-      <Text style={styles.header}> Task#{id}</Text>
-      <Text style={styles.title}>{title}</Text>
+      <Text className="text-2xl font-semibold">Task#{id}</Text>
+      <Text className="text-lg my-4 text-center">{title}</Text>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    fontSize: 24,
-    fontWeight: "700",
-    textAlign: "center",
-  },
-  title: {
-    fontSize: 18,
-    marginVertical: 28,
-    textAlign: "center",
-  },
-});

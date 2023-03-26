@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 type RadioButtonGroupProps = PropsWithChildren<{}>;
 
@@ -11,7 +11,7 @@ type RadioButtonProps = {
 };
 
 export const RadioButtonGroup: FC<RadioButtonGroupProps> = ({ children }) => (
-  <View style={styles.group}>{children}</View>
+  <View className="flex-row w-full justify-evenly">{children}</View>
 );
 
 export const RadioButton = (props: RadioButtonProps) => {
@@ -23,59 +23,26 @@ export const RadioButton = (props: RadioButtonProps) => {
 
   return (
     <TouchableOpacity onPress={handleOnPress} disabled={disabled}>
-      <View style={styles.container}>
+      <View className="flex-row items-center mr-2">
         {label ? (
-          <Text style={[styles.label, disabled && styles.labelDisabled]}>
+          <Text className={`mr-2 capitalize ${disabled && "text-neutral-300"}`}>
             {label}
           </Text>
         ) : null}
-        <View style={[styles.radio, disabled && styles.radioDisabled]}>
+        <View
+          className={`justify-center items-center h-6 w-6 rounded-full border-2 ${
+            disabled && "border-neutral-300"
+          }`}
+        >
           {selected ? (
-            <View style={[styles.dot, disabled && styles.dotDisabled]} />
+            <View
+              className={`h-3 w-3 rounded-full bg-black ${
+                disabled && "bg-neutral-300"
+              }`}
+            />
           ) : null}
         </View>
       </View>
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  group: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-  },
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginEnd: 8,
-  },
-  label: {
-    marginEnd: 8,
-    textTransform: "capitalize",
-  },
-  labelDisabled: {
-    color: "#cccccc",
-  },
-  radio: {
-    height: 24,
-    width: 24,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: "#000000",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  radioDisabled: {
-    borderColor: "#cccccc",
-  },
-  dot: {
-    height: 12,
-    width: 12,
-    borderRadius: 6,
-    backgroundColor: "#000000",
-  },
-  dotDisabled: {
-    backgroundColor: "#cccccc",
-  },
-});

@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { ReactNode } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import type { Task, NavProp } from "shared";
 
 type TaskRowProps = {
@@ -16,43 +16,17 @@ export const TaskRow = ({ data, before }: TaskRowProps) => {
 
   return (
     <TouchableOpacity onPress={onTaskPress}>
-      <View style={styles.container}>
+      <View className="flex-row items-center h-12 bg-zinc-50 my-2 mx-4 rounded-lg shadow shadow-slate-300">
         {before}
         <Text
           numberOfLines={2}
-          style={[
-            styles.title,
-            { textDecorationLine: completed ? "line-through" : "none" },
-          ]}
+          className={`flex-1 text-base pr-2 ${
+            completed ? "line-through" : "no-underline"
+          }`}
         >
-          {title}
           {title}
         </Text>
       </View>
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    height: 48,
-    borderRadius: 8,
-    backgroundColor: "#fafafa",
-    marginHorizontal: 16,
-    marginVertical: 8,
-    alignItems: "center",
-
-    // elevation
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  title: {
-    flex: 1,
-    fontSize: 15,
-    paddingEnd: 8,
-  },
-});

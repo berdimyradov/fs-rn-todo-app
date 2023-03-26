@@ -1,6 +1,6 @@
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { taskModel } from "entities";
 import type { NavProp } from "shared";
 
@@ -11,7 +11,7 @@ export const TasksSummary = () => {
   const onAddToListPress = () => navigate("AddTask");
 
   return (
-    <View style={styles.container}>
+    <View className="flex-row justify-between items-center py-2 px-6 border-t border-neutral-100">
       <Text>Number of tasks: {numberOfTasks}</Text>
       <Entypo
         name="add-to-list"
@@ -22,15 +22,3 @@ export const TasksSummary = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 24,
-    borderTopWidth: 1,
-    borderColor: "#eee",
-  },
-});

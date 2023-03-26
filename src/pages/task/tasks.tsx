@@ -1,14 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import { FC } from "react";
-import { FlatList, SafeAreaView, StyleSheet } from "react-native";
-import { TasksFilters, TasksSummary, ToggleTask } from "features";
-import { taskModel, TaskRow, useTaskDispatch } from "entities";
-import { Empty, Loading } from "shared";
-import { ScreenProps } from "shared/routes";
+import { SafeAreaView } from "react-native";
+import { TaskList } from "widgets";
+import { TasksFilters, TasksSummary } from "features";
+import { taskModel, useTaskDispatch } from "entities";
+import { Loading } from "shared";
+import type { ScreenProps } from "shared";
 
 export const TasksScreen: FC<ScreenProps<"Tasks">> = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="flex-1">
       <TasksFilters />
       <TasksList />
       <TasksSummary />
@@ -24,26 +25,5 @@ function TasksList() {
 
   if (isFetching) return <Loading />;
 
-  return (
-    <FlatList
-      data={filteredTasks}
-      contentContainerStyle={styles.listContent}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => (
-        <TaskRow data={item} before={<ToggleTask taskId={item.id} />} />
-      )}
-      ListEmptyComponent={<Empty desc="No tasks found" />}
-    />
-  );
+  return <TaskList data={filteredTasks} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  listContent: {
-    minHeight: "100%",
-    paddingVertical: 16,
-    backgroundColor: "#ffffff",
-  },
-});

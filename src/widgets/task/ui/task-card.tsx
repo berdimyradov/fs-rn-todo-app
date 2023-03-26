@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { ToggleTask } from "features";
 import { TaskCard, taskModel, useTaskDispatch } from "entities";
 import { Loading } from "shared";
@@ -15,29 +15,9 @@ export const TaskCardWidget = ({ taskId }: Props) => {
   if (isFetching) return <Loading />;
 
   return (
-    <View style={styles.container}>
+    <View className="justify-around items-center h-72 w-56 py-6 px-2 bg-zinc-50 rounded-2xl shadow-lg">
       <TaskCard task={task} />
       <ToggleTask taskId={taskId} withStatus={true} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    borderRadius: 16,
-    backgroundColor: "#fafafa",
-    paddingVertical: 24,
-    paddingHorizontal: 8,
-    height: 280,
-    width: 220,
-    justifyContent: "space-around",
-    alignItems: "center",
-
-    // elevation
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-});

@@ -1,5 +1,5 @@
 import { Entypo } from "@expo/vector-icons";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { taskModel } from "entities";
 
 type Props = {
@@ -10,25 +10,12 @@ export const TaskFooter = ({ taskId }: Props) => {
   const task = taskModel.selectors.useTask(taskId);
 
   return (
-    <View style={styles.container}>
+    <View className="items-center">
       <Text>Task is owned by:</Text>
-      <View style={styles.row}>
+      <View className="flex-row">
         <Entypo name="user" size={24} color="black" />
-        <Text style={styles.userId}>{task.userId}</Text>
+        <Text className="pl-2 text-xl font-bold">{task.userId}</Text>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  row: {
-    flexDirection: "row",
-  },
-  userId: {
-    fontSize: 24,
-    fontWeight: "700",
-  },
-});

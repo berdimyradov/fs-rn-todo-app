@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { taskModel, useTaskDispatch } from "entities";
 import { RadioButton, RadioButtonGroup } from "shared";
 
@@ -32,7 +32,7 @@ export const TasksFilters = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View className="p-2 border-b border-neutral-100">
       <RadioButtonGroup>
         {Object.keys(radioMap).map((key) => (
           <RadioButton
@@ -47,14 +47,5 @@ export const TasksFilters = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    padding: 8,
-    borderBottomWidth: 1,
-    borderColor: "#eee",
-  },
-});
 
 type Filters = typeof resetFilters;
