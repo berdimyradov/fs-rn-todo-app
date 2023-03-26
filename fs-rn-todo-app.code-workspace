@@ -1,0 +1,44 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "app",
+      "path": "src/app"
+    },
+    {
+      "name": "processes",
+      "path": "src/processes"
+    },
+    {
+      "name": "pages",
+      "path": "src/pages"
+    },
+    {
+      "name": "widgets",
+      "path": "src/widgets"
+    },
+    {
+      "name": "features",
+      "path": "src/features"
+    },
+    {
+      "name": "entities",
+      "path": "src/entities"
+    },
+    {
+      "name": "shared",
+      "path": "src/shared"
+    }
+  ],
+  "settings": {},
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss"
+    ]
+  }
+}
