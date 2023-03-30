@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { ToggleTask } from "features";
-import { TaskCard, taskModel } from "entities";
+import { TaskCard, taskModel } from "entities/task";
 import { Loading, useTaskDispatch } from "shared";
 
 type Props = {

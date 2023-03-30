@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
-import { taskModel } from "entities";
+import { taskModel } from "entities/task";
 import type { Task } from "shared";
 import { Button, Input, lib, useTaskDispatch } from "shared";
 

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { View } from "react-native";
-import { taskModel } from "entities";
+import { taskModel } from "entities/task";
 import { RadioButton, RadioButtonGroup, useTaskDispatch } from "shared";
 
 const resetFilters = {

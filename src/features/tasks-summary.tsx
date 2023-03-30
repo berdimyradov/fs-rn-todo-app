@@ -1,7 +1,7 @@
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text } from "react-native";
-import { taskModel } from "entities";
+import { taskModel } from "entities/task";
 import type { NavProp } from "shared";
 
 export const TasksSummary = () => {

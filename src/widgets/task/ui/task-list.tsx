@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet } from "react-native";
 import { ToggleTask } from "features";
-import { TaskRow } from "entities";
+import { TaskRow } from "entities/task";
 import { Empty, Task } from "shared";
 
 type Props = {

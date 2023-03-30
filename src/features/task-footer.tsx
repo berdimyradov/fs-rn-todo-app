@@ -1,6 +1,6 @@
 import { Entypo } from "@expo/vector-icons";
 import { Text, View } from "react-native";
-import { taskModel } from "entities";
+import { taskModel } from "entities/task";
 
 type Props = {
   taskId: number;

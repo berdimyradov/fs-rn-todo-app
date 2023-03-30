@@ -3,7 +3,7 @@ import { FC } from "react";
 import { SafeAreaView } from "react-native";
 import { TaskList } from "widgets";
 import { TasksFilters, TasksSummary } from "features";
-import { taskModel } from "entities";
+import { taskModel } from "entities/task";
 import { Loading, useTaskDispatch } from "shared";
 import type { ScreenProps } from "shared";
 
