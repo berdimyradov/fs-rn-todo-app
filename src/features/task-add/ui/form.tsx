@@ -8,7 +8,7 @@ type Props = {
   onNewTaskAdded?: (task: Task) => void;
 };
 
-export const TaskAdd = ({ onNewTaskAdded }: Props) => {
+export const TaskAddForm = ({ onNewTaskAdded }: Props) => {
   const dispatch = useTaskDispatch();
   const [newTask, setNewTask] = useState<Task>({
     id: lib.randomIntFromInterval(201, 999),
