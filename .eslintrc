@@ -9,6 +9,6 @@
     }
   },
   "rules": {
-    "import/no-internal-modules": ["warn"]
+    "import/no-internal-modules": ["warn", { "allow": ["**/ui/*"] }]
   }
 }
