@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
-import { taskModel, useTaskDispatch } from "entities";
+import { taskModel } from "entities";
 import type { Task } from "shared";
-import { Button, Input, lib } from "shared";
+import { Button, Input, lib, useTaskDispatch } from "shared";
 
 type Props = {
   onNewTaskAdded?: (task: Task) => void;

@@ -3,8 +3,8 @@ import { FC } from "react";
 import { SafeAreaView } from "react-native";
 import { TaskList } from "widgets";
 import { TasksFilters, TasksSummary } from "features";
-import { taskModel, useTaskDispatch } from "entities";
-import { Loading } from "shared";
+import { taskModel } from "entities";
+import { Loading, useTaskDispatch } from "shared";
 import type { ScreenProps } from "shared";
 
 export const TasksScreen: FC<ScreenProps<"Tasks">> = () => {

@@ -6,8 +6,7 @@ import {
 } from "@reduxjs/toolkit";
 import { useIsFetching, useQuery } from "react-query";
 import type { Task } from "shared";
-import { API } from "shared";
-import { useTaskSelector } from "./hooks";
+import { API, useTaskSelector } from "shared";
 
 const initialState: TaskState = {
   entries: {},
