@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SafeAreaView, View } from "react-native";
-import { TaskCardWidget } from "widgets";
+import { TaskCardWidget } from "widgets/task";
 import { TaskFooter } from "entities/task";
 import type { ScreenProps } from "shared";
 
