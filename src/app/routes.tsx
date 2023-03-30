@@ -1,7 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TasksScreen, TaskScreen, AddTaskScreen } from "pages";
-import { RootStackParamList } from "shared/routes";
+import { AddTaskScreen } from "pages/add-task";
+import { TasksScreen } from "pages/list-tasks";
+import { TaskScreen } from "pages/view-task-details";
+import { RootStackParamList } from "shared";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
