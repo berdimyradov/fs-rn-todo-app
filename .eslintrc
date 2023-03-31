@@ -9,6 +9,19 @@
     }
   },
   "rules": {
-    "import/no-internal-modules": ["warn", { "allow": ["**/ui/*"] }]
+    "import/no-internal-modules": [
+      "warn",
+      {
+        "allow": [
+          "**/ui/*",
+          "pages/*",
+          "processes/*",
+          "widgets/*",
+          "features/*",
+          "entities/*",
+          "shared/*"
+        ]
+      }
+    ]
   }
 }
