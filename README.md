@@ -6,6 +6,8 @@
 🍰 [Architecture design guidelines](https://feature-sliced.design/)
 📱 [Example on Expo Store](https://expo.dev/@berdimyradov/todo-app)
 
+![Example](https://raw.githubusercontent.com/berdimyradov/fs-rn-todo-app/main/assets/rn-todo-app.gif)
+
 ## Technology stack
 
 - **UI**: `react`, `react-native`, `expo`,
