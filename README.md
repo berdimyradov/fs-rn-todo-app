@@ -18,7 +18,7 @@
 
 <div align="center">
 <img title="react" alt="react" height=48 src="https://raw.githubusercontent.com/yurijserrano/Github-Profile-Readme-Logos/master/frameworks/react.svg"/>
-<img title="react-native" alt="react-native" height=48 src="https://reactnative.dev/img/favicon.ico"/>
+<img title="react-native" alt="react-native" height=48 src="https://reactnative.dev/img/header_logo.svg"/>
 <img title="expo" alt="expo" height=48 src="https://static.expo.dev/static/favicons/favicon-light-48x48.png"/>
 <img title="redux" alt="redux" height=48 src="https://raw.githubusercontent.com/yurijserrano/Github-Profile-Readme-Logos/master/frameworks/redux.svg"/>
 <img title="typescript" alt="typescript" height=48 src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"/>
