@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
+import {
+  Keyboard,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { taskModel } from "entities/task";
 import type { Task } from "shared";
 import { Button, Input, lib, useTaskDispatch } from "shared";
@@ -24,8 +30,8 @@ export const TaskAddForm = ({ onNewTaskAdded }: Props) => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View className="h-60 justify-evenly">
-        <Text className="text-xl font-bold text-center">New Task</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>New Task</Text>
         <Input
           placeholder="Enter task"
           value={newTask.title}
@@ -41,3 +47,16 @@ export const TaskAddForm = ({ onNewTaskAdded }: Props) => {
     </TouchableWithoutFeedback>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    height: 240,
+    justifyContent: "space-evenly",
+  },
+  title: {
+    fontSize: 20,
+    lineHeight: 28,
+    fontWeight: "700",
+    textAlign: "center",
+  },
+});

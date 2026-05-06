@@ -1,17 +1,32 @@
-import { ButtonProps, Text, TouchableOpacity } from "react-native";
+import { ButtonProps, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export const Button = ({ title, color, disabled, ...rest }: ButtonProps) => {
   return (
     <TouchableOpacity
-      className={`h-10 p-2.5 rounded-2xl border bg-gray-500 ${
-        disabled && "bg-neutral-300"
-      }`}
+      style={[styles.button, disabled && styles.disabledButton]}
       disabled={disabled}
       {...rest}
     >
-      <Text className="text-center uppercase" style={{ color }}>
+      <Text style={[styles.title, { color }]}>
         {title}
       </Text>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  button: {
+    height: 40,
+    padding: 10,
+    borderRadius: 16,
+    borderWidth: 1,
+    backgroundColor: "#6b7280",
+  },
+  disabledButton: {
+    backgroundColor: "#d4d4d4",
+  },
+  title: {
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
+});

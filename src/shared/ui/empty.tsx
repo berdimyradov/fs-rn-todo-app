@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 type Props = {
   desc: string;
@@ -6,8 +6,20 @@ type Props = {
 
 export const Empty = ({ desc }: Props) => {
   return (
-    <View className="h-full justify-center">
-      <Text className="text-lg text-center">{desc}</Text>
+    <View style={styles.container}>
+      <Text style={styles.desc}>{desc}</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    height: "100%",
+    justifyContent: "center",
+  },
+  desc: {
+    fontSize: 18,
+    lineHeight: 28,
+    textAlign: "center",
+  },
+});

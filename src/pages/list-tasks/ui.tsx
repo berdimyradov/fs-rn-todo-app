@@ -1,13 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { FC } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { TasksListWidget, TasksSummaryWidget } from "widgets/task";
 import { TasksFilters } from "features";
 import type { ScreenProps } from "shared";
 
 export const TasksScreen: FC<ScreenProps<"Tasks">> = () => {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView style={styles.container}>
       <TasksFilters />
       <TasksListWidget />
       <TasksSummaryWidget />
@@ -15,3 +15,9 @@ export const TasksScreen: FC<ScreenProps<"Tasks">> = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

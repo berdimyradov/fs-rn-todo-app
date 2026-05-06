@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { taskModel } from "../model";
 
 type Props = {
@@ -10,9 +10,21 @@ export const TasksSummary = ({ actionItem }: Props) => {
   const numberOfTasks = taskModel.selectors.getFilteredTasks().length;
 
   return (
-    <View className="flex-row justify-between items-center py-2 px-6 border-t border-neutral-100">
+    <View style={styles.container}>
       <Text>Number of tasks: {numberOfTasks}</Text>
       {actionItem}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 8,
+    paddingHorizontal: 24,
+    borderTopWidth: 1,
+    borderTopColor: "#f5f5f5",
+  },
+});

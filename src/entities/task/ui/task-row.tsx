@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { ReactNode } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import type { Task, NavProp } from "shared";
 
 type TaskRowProps = {
@@ -16,13 +16,11 @@ export const TaskRow = ({ data, before }: TaskRowProps) => {
 
   return (
     <TouchableOpacity onPress={onTaskPress}>
-      <View className="flex-row items-center h-12 bg-zinc-50 my-2 mx-4 rounded-lg shadow shadow-slate-300">
+      <View style={styles.container}>
         {before}
         <Text
           numberOfLines={2}
-          className={`flex-1 text-base pr-2 ${
-            completed ? "line-through" : "no-underline"
-          }`}
+          style={[styles.title, completed && styles.completedTitle]}
         >
           {title}
         </Text>
@@ -30,3 +28,33 @@ export const TaskRow = ({ data, before }: TaskRowProps) => {
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: 48,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 8,
+    backgroundColor: "#fafafa",
+    shadowColor: "#cbd5e1",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
+  },
+  title: {
+    flex: 1,
+    paddingRight: 8,
+    fontSize: 16,
+    lineHeight: 24,
+    textDecorationLine: "none",
+  },
+  completedTitle: {
+    textDecorationLine: "line-through",
+  },
+});

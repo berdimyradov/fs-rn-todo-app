@@ -4,7 +4,8 @@ import {
   Dispatch,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { useIsFetching, useQuery } from "react-query";
+import { useQuery, useIsFetching } from "@tanstack/react-query";
+import { useEffect } from "react";
 import type { Task } from "shared";
 import { API, useTaskSelector } from "shared";
 
@@ -15,26 +16,40 @@ const initialState: TaskState = {
 
 const TASKS_KEY = "tasks";
 
-// react-query actions (everything that async)
-const getTasksListAsync = () => (dispatch: Dispatch) =>
-  useQuery<Task[]>(TASKS_KEY, () => API.tasks.getTasksList(), {
-    onSuccess: (data) =>
-      dispatch(taskModel.actions.setTasksList(data.slice(0, 25))),
+// TanStack Query actions (everything that async)
+const getTasksListAsync = () => (dispatch: Dispatch) => {
+  const query = useQuery({
+    queryKey: [TASKS_KEY],
+    queryFn: () => API.tasks.getTasksList(),
     refetchOnWindowFocus: false,
   });
 
-export const getTaskByIdAsync = (id: number) => (dispatch: Dispatch) =>
-  useQuery<Task>("task", () => API.tasks.getTaskById(id), {
-    onSuccess: (data) => {
-      if (!data.id) {
-        return;
-      }
-      return dispatch(taskModel.actions.addTaskToList(data));
-    },
+  useEffect(() => {
+    if (query.data) {
+      dispatch(taskModel.actions.setTasksList(query.data.slice(0, 25)));
+    }
+  }, [dispatch, query.data]);
+
+  return query;
+};
+
+export const getTaskByIdAsync = (id: number) => (dispatch: Dispatch) => {
+  const query = useQuery({
+    queryKey: ["task", id],
+    queryFn: () => API.tasks.getTaskById(id),
     refetchOnWindowFocus: false,
     retry: false,
     staleTime: 5 * 60 * 1000, // 5minutes
   });
+
+  useEffect(() => {
+    if (query.data?.id) {
+      dispatch(taskModel.actions.addTaskToList(query.data));
+    }
+  }, [dispatch, query.data]);
+
+  return query;
+};
 
 // selectors
 const getFilteredTasks = () =>
@@ -62,7 +77,8 @@ const useTask = (taskId: number) =>
     )
   );
 
-const areTasksLoading = (): boolean => useIsFetching(TASKS_KEY) > 0;
+const areTasksLoading = (): boolean =>
+  useIsFetching({ queryKey: [TASKS_KEY] }) > 0;
 
 const taskSlice = createSlice({
   name: TASKS_KEY,

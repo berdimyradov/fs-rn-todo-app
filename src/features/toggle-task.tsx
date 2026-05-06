@@ -1,5 +1,5 @@
 import Checkbox from "expo-checkbox";
-import { Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { taskLib, taskModel } from "entities/task";
 import { useTaskDispatch } from "shared";
 
@@ -19,18 +19,31 @@ export const ToggleTask = ({ taskId, withStatus }: ToggleTaskProps) => {
 
   const checkbox = (
     <Checkbox
-      className="mx-2"
+      style={styles.checkbox}
       onValueChange={onToggle}
       value={task.completed}
     />
   );
 
   return withStatus ? (
-    <TouchableOpacity className="flex-row" onPress={onToggle}>
+    <TouchableOpacity style={styles.container} onPress={onToggle}>
       {checkbox}
-      <Text className="font-bold uppercase">{status}</Text>
+      <Text style={styles.status}>{status}</Text>
     </TouchableOpacity>
   ) : (
     checkbox
   );
 };
+
+const styles = StyleSheet.create({
+  checkbox: {
+    marginHorizontal: 8,
+  },
+  container: {
+    flexDirection: "row",
+  },
+  status: {
+    fontWeight: "700",
+    textTransform: "uppercase",
+  },
+});
