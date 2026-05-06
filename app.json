@@ -25,6 +25,7 @@
       }
     },
     "web": {
+      "output": "single",
       "favicon": "./assets/favicon.png"
     },
     "extra": {
