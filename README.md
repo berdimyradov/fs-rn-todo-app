@@ -4,7 +4,6 @@
 [![FeatureSliced](https://img.shields.io/badge/Powered%20by-%F0%9F%8D%B0%20Feature%20Sliced-%235c9cb5)](https://feature-sliced.design/)
 
 🍰 [Architecture design guidelines](https://feature-sliced.design/)
-📱 [Example on Expo Store](https://expo.dev/@berdimyradov/todo-app)
 🌐 [Web example](https://rn-todo.expo.app/)
 
 ![Example](https://raw.githubusercontent.com/berdimyradov/fs-rn-todo-app/main/assets/rn-todo-app.gif)
