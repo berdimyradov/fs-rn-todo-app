@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fs-rn-todo-app",
-    "slug": "fs-rn-todo-app",
+    "name": "TuDu",
+    "slug": "TuDu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icons/ios-light.png",
