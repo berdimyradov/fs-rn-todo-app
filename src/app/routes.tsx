@@ -22,6 +22,7 @@ export const Routing = () => {
         <RootStack.Group
           screenOptions={{
             presentation: "transparentModal",
+            animation: "slide_from_bottom",
             headerShown: false,
           }}
         >
