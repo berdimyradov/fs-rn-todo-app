@@ -22,6 +22,7 @@
     "expo": "55.0.21",
     "expo-checkbox": "~55.0.4",
     "expo-dev-client": "~55.0.32",
+    "expo-splash-screen": "~55.0.20",
     "expo-status-bar": "~55.0.5",
     "react": "^19.2.0",
     "react-dom": "19.2.0",
