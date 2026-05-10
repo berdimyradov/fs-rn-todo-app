@@ -16,13 +16,17 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.berdimyradov.fsrntodoapp"
+      "bundleIdentifier": "com.berdimyradov.fsrntodoapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.berdimyradov.fsrntodoapp"
     },
     "web": {
       "output": "single",
