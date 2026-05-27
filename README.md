@@ -3,8 +3,13 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/select-name/sharead-frontend)
 [![FeatureSliced](https://img.shields.io/badge/Powered%20by-%F0%9F%8D%B0%20Feature%20Sliced-%235c9cb5)](https://feature-sliced.design/)
 
-🍰 [Architecture design guidelines](https://feature-sliced.design/)
-🌐 [Web example](https://rn-todo.expo.app/)
+## Links:
+
+- 🍰 [Architecture design guidelines](https://feature-sliced.design/)
+- 🌐 [Web example](https://tudu.expo.app/)
+- 📱 [Google Play](https://play.google.com/store/apps/details?id=com.berdimyradov.fsrntodoapp)
+
+## Demo
 
 ![Example](https://raw.githubusercontent.com/berdimyradov/fs-rn-todo-app/main/assets/rn-todo-app.gif)
 
